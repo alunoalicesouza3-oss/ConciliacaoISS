@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conciliação</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Upload de arquivos para conciliação</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label>Arquivo 1:</label><input type="file" name="file1" required><br>
+        <label>Arquivo 2:</label><input type="file" name="file2" required><br>
+        <label>Arquivo 3:</label><input type="file" name="file3" required><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    {% if divergencias %}
+    <h2>Divergências encontradas:</h2>
+    {{ divergencias|safe }}
+    {% endif %}
+</body>
+</html>
